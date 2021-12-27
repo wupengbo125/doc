@@ -521,7 +521,9 @@ func main() {
 ```go
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 type Human struct {
 	//成员属性:
@@ -562,13 +564,14 @@ func main() {
 	fmt.Println("s1.school:", s1.school)
 
 	t1 := Teacher{
-		Human: Human{
-			name:   "Lily",
-			age:    18,
+		Human: Human{//这里开头必须是Human，因为是初始化Human，你写个hum肯定不行
+			name:   "薛老师",
+			age:    32,
 			gender: "女生",
 		},
-		subject: "数学",
+		subject: "语文",
 	}
+
 
 	fmt.Println("t1 :", t1)
 	t1.Eat()
@@ -577,6 +580,7 @@ func main() {
 	//这是为了在子类中依然可以操作父类，因为：子类父类可能出现同名的字段
 	fmt.Println("t1.Human.name:", t1.Human.name)
 }
+
 
 ```
 
