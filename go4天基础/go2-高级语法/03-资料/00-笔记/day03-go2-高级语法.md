@@ -561,11 +561,14 @@ func main() {
 	fmt.Println("s1.name:", s1.hum.name)
 	fmt.Println("s1.school:", s1.school)
 
-	t1 := Teacher{}
-	t1.subject = "语文"
-	t1.name = "荣老师" //下面这几个字段都是继承自Human
-	t1.age = 35
-	t1.gender = "女生"
+	t1 := Teacher{
+		Human: Human{
+			name:   "Lily",
+			age:    18,
+			gender: "女生",
+		},
+		subject: "数学",
+	}
 
 	fmt.Println("t1 :", t1)
 	t1.Eat()
